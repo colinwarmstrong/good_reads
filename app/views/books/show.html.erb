@@ -1,0 +1,20 @@
+<h1><%= @book.title %></h1>
+<h3>Average Rating: <%= @average_rating %></h3>
+
+<section class='highest-subheader'>
+  <h3>Highest Rating: <%= @highest_rating %></h3>
+  <p><%= @highest_rating_user %></p>
+  <p><%= @highest_rating_body %></p>
+</section>
+
+<section class='lowest-subheader'>
+  <h3>Lowest Rating: <%= @lowest_rating %></h3>
+  <p><%= @lowest_rating_user %></p>
+  <p><%= @lowest_rating_body %></p>
+</section>
+
+<% @reviews.each do |review| %>
+  <%= review.user.name %>
+  <%= review.body %>
+  <p>Rating: <%= review.rating %></p>
+<% end %>
